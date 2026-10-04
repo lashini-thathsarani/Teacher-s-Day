@@ -1,0 +1,428 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient( 135deg, #ffe4ec, #fff3d6)
+}
+
+.opening {
+    text-align: center;
+    padding: 40px;
+}
+
+.flower {
+    font-size: 60px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size: 45px;
+    color: #d63384;
+    margin-bottom: 15px;
+
+}
+
+p{
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+button {
+
+    border: none;
+    padding: 14px 28px;
+
+    font-size: 17px;
+    color: white;
+
+    background-color: #d63384;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b82b70;
+}
+
+/* =========================
+   WISH PAGE - ONE SCREEN
+========================= */
+
+.wish-container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   FLOWER
+========================= */
+
+.wish-container .flower {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.wish-container h1 {
+    font-size: 38px;
+    color: #d63384;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.teacher-photo img {
+    width: 380px;
+    height: 270px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+    display: block;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.wish-container .intro {
+    max-width: 700px;
+
+    margin: 0 auto 15px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* =========================
+   SMALL MESSAGE
+========================= */
+
+.wish-container .click-text {
+    font-size: 17px;
+
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.wish-container .envelope {
+    font-size: 70px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+
+.wish-container .envelope:hover {
+    transform: scale(1.12);
+}
+
+
+/* =========================
+   ENVELOPE TEXT
+========================= */
+
+.wish-container .envelope-text {
+    color: #d63384;
+
+    font-size: 15px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .wish-container {
+        padding: 10px 15px;
+    }
+
+    .wish-container .flower {
+        font-size: 38px;
+        margin-bottom: 5px;
+    }
+
+    .wish-container h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .teacher-photo img {
+        width: min(90vw, 330px);
+        height: 210px;
+
+        margin-bottom: 12px;
+    }
+
+    .wish-container .intro {
+        font-size: 15px;
+        line-height: 1.4;
+
+        margin-bottom: 10px;
+    }
+
+    .wish-container .click-text {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .wish-container .envelope {
+        font-size: 55px;
+    }
+
+    .wish-container .envelope-text {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   LETTER PAGE
+========================= */
+
+body:has(.letter-paper) {
+    display: block;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #fff3d6
+    );
+
+    padding: 50px 20px;
+}
+
+
+/* =========================
+   LETTER PAPER
+========================= */
+
+.letter-paper {
+    width: 90%;
+    max-width: 800px;
+
+    margin: 0 auto;
+    padding: 55px 70px;
+
+    background: #fffdf7;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    text-align: left;
+}
+
+
+/* =========================
+   FLOWER
+========================= */
+
+.letter-paper .flower {
+    text-align: center !important;
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.letter-paper h1 {
+    text-align: center !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 36px;
+
+    color: #d63384;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.letter-paper .date {
+    text-align: center !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    color: #999;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   LETTER BODY
+========================= */
+
+.letter-paper p {
+    text-align: left !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #4f4f4f;
+
+    margin-top: 0;
+
+    margin-bottom: 28px;
+
+    /* No first-line indentation */
+    text-indent: 0 !important;
+}
+
+
+/* =========================
+   BOLD TEXT
+========================= */
+
+.letter-paper p strong {
+    color: #d63384;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.letter-paper .signature {
+    margin-top: 45px;
+
+    padding-top: 20px;
+
+    text-align: right !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #d63384;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body:has(.letter-paper) {
+        padding: 20px 10px;
+    }
+
+
+    .letter-paper {
+        width: 95%;
+
+        padding: 40px 25px;
+    }
+
+
+    .letter-paper h1 {
+        font-size: 28px;
+    }
+
+
+    .letter-paper p {
+        text-align: left !important;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+        margin-bottom: 24px;
+
+        text-indent: 0 !important;
+    }
+
+
+    .letter-paper .date {
+        text-align: center !important;
+    }
+
+
+    .letter-paper .flower {
+        text-align: center !important;
+    }
+
+
+    .letter-paper .signature {
+        text-align: right !important;
+
+        font-size: 16px;
+    }
+}
