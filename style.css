@@ -83,9 +83,9 @@ button:hover {
    FLOWER
 ========================= */
 
-.wish-container .flower {
+..wish-container .flower {
     font-size: 48px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 
@@ -94,12 +94,11 @@ button:hover {
 ========================= */
 
 .wish-container h1 {
-    font-size: 35px;
+    font-size: 38px;
     color: #d63384;
 
-    margin-bottom: 50px;
+    margin-bottom: 18px;
 }
-
 
 /* =========================
    PHOTO
