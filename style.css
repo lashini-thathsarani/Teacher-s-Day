@@ -83,7 +83,7 @@ button:hover {
    FLOWER
 ========================= */
 
-..wish-container .flower {
+.wish-container .flower {
     font-size: 48px;
     margin-bottom: 8px;
 }
@@ -99,6 +99,7 @@ button:hover {
 
     margin-bottom: 18px;
 }
+
 
 /* =========================
    PHOTO
@@ -117,7 +118,7 @@ button:hover {
 
     display: block;
 
-    margin-bottom: 35px;
+    margin-bottom: 18px;
 }
 
 
@@ -188,112 +189,68 @@ button:hover {
    MOBILE
 ========================= */
 
-/* =========================
-   MOBILE PHONE VIEW
-========================= */
-
 @media (max-width: 600px) {
 
     .wish-container {
-        width: 100%;
-        height: 100vh;
-        min-height: 100vh;
-
-        padding: 15px 12px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-
-        text-align: center;
-        overflow: hidden;
+        padding: 10px 15px;
     }
 
-    /* 🌸 Flower */
     .wish-container .flower {
-        font-size: 36px;
-        line-height: 1;
-        margin: 0 0 6px 0;
+        font-size: 38px;
+        margin-bottom: 5px;
     }
 
-    /* TITLE */
     .wish-container h1 {
-        font-size: 27px;
-        line-height: 1.2;
-
-        margin: 0 0 35px 0;
-
-        color: #d63384;
-    }
-
-    /* PHOTO */
-    .teacher-photo {
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        margin: 0;
-        padding: 0;
+        font-size: 28px;
+        margin-bottom: 12px;
     }
 
     .teacher-photo img {
-        width: 88vw;
-        max-width: 340px;
+        width: min(90vw, 330px);
+        height: 210px;
 
-        height: 205px;
-
-        object-fit: cover;
-
-        display: block;
-
-        border-radius: 18px;
-
-        margin: 0 0 12px 0;
+        margin-bottom: 12px;
     }
 
-    /* INTRO */
     .wish-container .intro {
-        width: 100%;
-        max-width: 350px;
-
         font-size: 15px;
         line-height: 1.4;
 
-        margin: 0 0 12px 0;
-
-        color: #555;
+        margin-bottom: 10px;
     }
 
-    /* SPECIAL MESSAGE TEXT */
     .wish-container .click-text {
-        font-size: 15px;
-        line-height: 1.3;
-
-        margin: 0 0 8px 0;
-
-        color: #777;
+        font-size: 14px;
+        margin-bottom: 5px;
     }
 
-    /* ENVELOPE */
     .wish-container .envelope {
         font-size: 55px;
-        line-height: 1;
-
-        margin: 0;
     }
 
-    /* CLICK ENVELOPE TEXT */
     .wish-container .envelope-text {
-        font-size: 14px;
-
-        margin: 4px 0 0 0;
-
-        color: #d63384;
+        font-size: 13px;
     }
 }
+
+/* =========================
+   LETTER PAGE
+========================= */
+
+body:has(.letter-paper) {
+    display: block;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #fff3d6
+    );
+
+    padding: 50px 20px;
+}
+
+
 /* =========================
    LETTER PAPER
 ========================= */
