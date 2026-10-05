@@ -149,11 +149,10 @@ button:hover {
 ========================= */
 
 .wish-container .click-text {
-    font-size: 10px;
-
-    color: #777;
-
-    margin-bottom: 8px;
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 8px 0 !important;
+    color: #777 !important;
 }
 
 
@@ -224,10 +223,11 @@ button:hover {
         margin-bottom: 10px;
     }
 
+    @media (max-width: 600px) {
     .wish-container .click-text {
-        font-size: 14px;
-        margin-bottom: 5px;
+        font-size: 15px !important;
     }
+}
 
     .wish-container .envelope {
         font-size: 55px;
