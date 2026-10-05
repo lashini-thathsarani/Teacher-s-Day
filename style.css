@@ -524,3 +524,30 @@ body:has(.letter-paper) {
         font-size: 16px;
     }
 }
+
+
+
+
+.exit-button {
+    display: block;
+    margin: 35px auto 0;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #d63384;
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.exit-button:hover {
+    background: #b82b70;
+    transform: scale(1.05);
+}
