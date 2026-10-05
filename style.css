@@ -223,18 +223,31 @@ body:has(.wish-container) {
         align-items: center;
     }
 
+
     .wish-container {
         width: 94%;
-        height: 94vh;
 
-        padding: 20px 12px;
+        height: auto;
+        min-height: 0;
 
-        border-radius: 8px;
+        padding: 30px 12px;
+
+        display: flex;
+        flex-direction: column;
 
         justify-content: center;
+        align-items: center;
 
         overflow: hidden;
+
+        background: #fffdf7;
+        border-radius: 10px;
+
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.15);
     }
+
+
 
 
     /* Flower */
