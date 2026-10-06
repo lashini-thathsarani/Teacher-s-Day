@@ -528,15 +528,14 @@ body:has(.letter-paper) {
 }
 
 
-/* =========================
-   LETTER PAGE
-========================= */
+/* =========================================================
+   MESSAGE PAGE - BACKGROUND
+========================================================= */
 
 body:has(.letter-paper) {
     min-height: 100vh;
 
     margin: 0;
-
     padding: 35px 15px 40px;
 
     box-sizing: border-box;
@@ -546,12 +545,14 @@ body:has(.letter-paper) {
         #f7dce5,
         #f9e8dc
     );
+
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* =========================================================
    LETTER PAPER
-========================= */
+========================================================= */
 
 .letter-paper {
     width: 90%;
@@ -561,10 +562,7 @@ body:has(.letter-paper) {
 
     padding: 45px 60px 50px;
 
-    /*
-       MUTED PINK
-       instead of white
-    */
+    /* MUTED PINK */
     background: #f8e8ed;
 
     border-radius: 12px;
@@ -575,14 +573,21 @@ body:has(.letter-paper) {
     text-align: left;
 
     box-sizing: border-box;
+
+    /*
+       Prevent anything from going
+       outside the letter
+    */
+    overflow: hidden;
 }
 
 
-/* =========================
+/* =========================================================
    FLOWER
-========================= */
+========================================================= */
 
 .letter-paper .flower {
+    width: 100%;
 
     text-align: center !important;
 
@@ -592,18 +597,18 @@ body:has(.letter-paper) {
 
     margin: 0 0 15px 0;
 
-    /*
-       Make sure flower doesn't get cut
-    */
-    overflow: visible;
+    display: block;
+
+    box-sizing: border-box;
 }
 
 
-/* =========================
-   TITLE
-========================= */
+/* =========================================================
+   TITLE - DEAR MADAM
+========================================================= */
 
 .letter-paper h1 {
+    width: 100%;
 
     text-align: center !important;
 
@@ -618,16 +623,19 @@ body:has(.letter-paper) {
 
     color: #d12f78;
 
-    margin: 0 0 12px 0;
+    margin: 0 0 18px 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
 }
 
 
-/* =========================
-   MADAM PHOTO
-========================= */
+/* =========================================================
+   MADAM PHOTO CONTAINER
+========================================================= */
 
 .madam-photo {
-
     width: 100%;
 
     display: flex;
@@ -636,27 +644,45 @@ body:has(.letter-paper) {
 
     align-items: center;
 
-    margin: 8px 0 22px 0;
+    margin: 0 0 22px 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 
+/* =========================================================
+   MADAM PHOTO
+========================================================= */
+
 .madam-photo img {
+    display: block;
 
     /*
-       Bigger photo
+       Natural image size
     */
-    width: 300px;
+    width: auto !important;
 
-    max-width: 80%;
-
-    height: auto;
+    height: auto !important;
 
     /*
-       DON'T CROP THE PHOTO
+       NEVER wider than the letter
+    */
+    max-width: 100% !important;
+
+    /*
+       Bigger photo on desktop,
+       but still safely inside
+       the letter
+    */
+    max-height: 420px;
+
+    /*
+       Keep the entire photo
+       without cropping
     */
     object-fit: contain;
-
-    display: block;
 
     border-radius: 18px;
 
@@ -664,14 +690,17 @@ body:has(.letter-paper) {
 
     box-shadow:
         0 8px 22px rgba(0, 0, 0, 0.15);
+
+    box-sizing: border-box;
 }
 
 
-/* =========================
-   DATE
-========================= */
+/* =========================================================
+   TEACHER'S DAY DATE
+========================================================= */
 
 .letter-paper .date {
+    width: 100%;
 
     text-align: center !important;
 
@@ -682,17 +711,22 @@ body:has(.letter-paper) {
 
     font-size: 15px;
 
+    line-height: 1.4;
+
     color: #999;
 
     margin: 0 0 38px 0;
+
+    box-sizing: border-box;
 }
 
 
-/* =========================
-   LETTER BODY
-========================= */
+/* =========================================================
+   LETTER PARAGRAPHS
+========================================================= */
 
 .letter-paper p {
+    width: 100%;
 
     text-align: left !important;
 
@@ -711,28 +745,40 @@ body:has(.letter-paper) {
 
     margin-bottom: 25px;
 
+    padding: 0;
+
     /*
-       No first-line indentation
+       No indentation
     */
     text-indent: 0 !important;
+
+    /*
+       Prevent long words from
+       breaking the page
+    */
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
+
+    box-sizing: border-box;
 }
 
 
-/* =========================
-   BOLD TEXT
-========================= */
+/* =========================================================
+   BOLD MESSAGE
+========================================================= */
 
 .letter-paper p strong {
-
     color: #d12f78;
 }
 
 
-/* =========================
+/* =========================================================
    SIGNATURE
-========================= */
+========================================================= */
 
 .letter-paper .signature {
+    width: 100%;
 
     margin-top: 40px;
 
@@ -750,23 +796,31 @@ body:has(.letter-paper) {
     line-height: 1.6;
 
     color: #d12f78;
+
+    box-sizing: border-box;
 }
 
 
-/* =========================
-   EXIT BUTTON
-========================= */
+/* =========================================================
+   EXIT BUTTON CONTAINER
+========================================================= */
 
 .exit-container {
+    width: 100%;
 
     text-align: center;
 
     margin-top: 25px;
+
+    box-sizing: border-box;
 }
 
 
-.exit-button {
+/* =========================================================
+   EXIT BUTTON
+========================================================= */
 
+.exit-button {
     padding: 10px 28px;
 
     border: none;
@@ -779,117 +833,208 @@ body:has(.letter-paper) {
 
     font-size: 15px;
 
+    font-family: Arial, sans-serif;
+
     cursor: pointer;
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+        background 0.3s ease,
+        transform 0.3s ease;
+
+    box-sizing: border-box;
 }
 
 
 .exit-button:hover {
-
     background: #b82b70;
 
     transform: scale(1.05);
 }
 
 
-/* =================================================
-   MOBILE VIEW
-================================================= */
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body:has(.letter-paper) {
+        padding: 25px 12px 35px;
+    }
+
+
+    .letter-paper {
+        width: 94%;
+
+        padding: 38px 40px 45px;
+    }
+
+
+    .letter-paper h1 {
+        font-size: 33px;
+    }
+
+
+    .madam-photo img {
+        max-width: 100% !important;
+
+        max-height: 380px;
+    }
+
+
+    .letter-paper p {
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 600px
+========================================================= */
 
 @media (max-width: 600px) {
 
     body:has(.letter-paper) {
-
         min-height: 100vh;
 
-        padding: 15px 8px 30px;
+        padding: 15px 7px 30px;
+
+        overflow-x: hidden;
 
         box-sizing: border-box;
     }
 
 
-    /* LETTER */
+    /* -----------------------------------------
+       LETTER
+    ----------------------------------------- */
 
     .letter-paper {
-
         width: 96%;
 
         max-width: none;
 
-        padding: 28px 18px 35px;
+        margin: 0 auto;
+
+        padding: 25px 16px 32px;
 
         background: #f8e8ed;
 
         border-radius: 12px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
     }
 
 
-    /* FLOWER */
+    /* -----------------------------------------
+       FLOWER
+    ----------------------------------------- */
 
     .letter-paper .flower {
-
         font-size: 38px;
 
         line-height: 1;
 
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
     }
 
 
-    /* TITLE */
+    /* -----------------------------------------
+       TITLE
+    ----------------------------------------- */
 
     .letter-paper h1 {
-
         font-size: 27px;
 
         line-height: 1.25;
 
-        margin-bottom: 15px;
+        margin: 0 0 15px 0;
     }
 
 
-    /* MADAM PHOTO */
+    /* -----------------------------------------
+       PHOTO CONTAINER
+    ----------------------------------------- */
 
     .madam-photo {
-
         width: 100%;
 
         margin: 5px 0 18px 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
     }
 
+
+    /* -----------------------------------------
+       PHOTO
+    ----------------------------------------- */
 
     .madam-photo img {
 
-        width: 220px;
+        /*
+           Don't force dimensions
+        */
+        width: auto !important;
 
-        max-width: 85%;
+        height: auto !important;
 
-        height: auto;
+        /*
+           Fit inside letter width
+        */
+        max-width: 100% !important;
 
+        /*
+           Limit height on phone
+        */
+        max-height: 300px;
+
+        /*
+           Complete image visible
+        */
         object-fit: contain;
 
-        border-radius: 15px;
+        border-radius: 14px;
 
-        border-width: 3px;
+        border: 3px solid #efb7ca;
+
+        box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.13);
+
+        box-sizing: border-box;
     }
 
 
-    /* DATE */
+    /* -----------------------------------------
+       DATE
+    ----------------------------------------- */
 
     .letter-paper .date {
-
         font-size: 14px;
 
-        margin-bottom: 28px;
+        line-height: 1.4;
+
+        margin: 0 0 28px 0;
     }
 
 
-    /* MESSAGE */
+    /* -----------------------------------------
+       MESSAGE
+    ----------------------------------------- */
 
     .letter-paper p {
+        width: 100%;
 
         text-align: left !important;
 
@@ -897,23 +1042,33 @@ body:has(.letter-paper) {
 
         line-height: 1.75;
 
+        margin-top: 0;
+
         margin-bottom: 21px;
 
         text-indent: 0 !important;
+
+        overflow-wrap: break-word;
+
+        word-wrap: break-word;
     }
 
 
-    /* BOLD */
+    /* -----------------------------------------
+       BOLD TEXT
+    ----------------------------------------- */
 
     .letter-paper p strong {
-
         color: #d12f78;
     }
 
 
-    /* SIGNATURE */
+    /* -----------------------------------------
+       SIGNATURE
+    ----------------------------------------- */
 
     .letter-paper .signature {
+        width: 100%;
 
         margin-top: 30px;
 
@@ -927,16 +1082,16 @@ body:has(.letter-paper) {
     }
 
 
-    /* EXIT */
+    /* -----------------------------------------
+       EXIT
+    ----------------------------------------- */
 
     .exit-container {
-
         margin-top: 20px;
     }
 
 
     .exit-button {
-
         padding: 9px 25px;
 
         font-size: 14px;
@@ -944,42 +1099,74 @@ body:has(.letter-paper) {
 }
 
 
-/* =================================================
-   VERY SMALL PHONES
-================================================= */
+/* =========================================================
+   VERY SMALL PHONES - 380px
+========================================================= */
 
 @media (max-width: 380px) {
 
-    .letter-paper {
+    body:has(.letter-paper) {
+        padding-left: 5px;
 
+        padding-right: 5px;
+    }
+
+
+    .letter-paper {
         width: 97%;
 
-        padding: 23px 14px 30px;
+        padding: 22px 13px 28px;
     }
 
+
+    /* FLOWER */
 
     .letter-paper .flower {
-
         font-size: 34px;
+
+        margin-bottom: 8px;
     }
 
 
-    .letter-paper h1 {
+    /* TITLE */
 
+    .letter-paper h1 {
         font-size: 24px;
+
+        margin-bottom: 13px;
+    }
+
+
+    /* PHOTO */
+
+    .madam-photo {
+        margin-bottom: 15px;
     }
 
 
     .madam-photo img {
+        max-width: 100% !important;
 
-        width: 190px;
+        max-height: 260px;
 
-        max-width: 85%;
+        border-radius: 12px;
+
+        border-width: 3px;
     }
 
 
-    .letter-paper p {
+    /* DATE */
 
+    .letter-paper .date {
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* MESSAGE */
+
+    .letter-paper p {
         font-size: 15px;
 
         line-height: 1.7;
@@ -988,8 +1175,20 @@ body:has(.letter-paper) {
     }
 
 
-    .letter-paper .signature {
+    /* SIGNATURE */
 
+    .letter-paper .signature {
         font-size: 15px;
+
+        margin-top: 25px;
+    }
+
+
+    /* EXIT */
+
+    .exit-button {
+        padding: 8px 23px;
+
+        font-size: 13px;
     }
 }
