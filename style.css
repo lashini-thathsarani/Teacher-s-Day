@@ -135,8 +135,8 @@ body:has(.wish-container) {
 }
 
 .teacher-photo img {
-    width: 380px;
-    height: 270px;
+    width: 500px;
+    height: 300px;
 
     object-fit: cover;
 
