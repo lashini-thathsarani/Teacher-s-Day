@@ -64,34 +64,41 @@ button:hover {
 
 body:has(.wish-container) {
     min-height: 100vh;
-    padding: 35px 20px;
+    margin: 0;
+    padding: 30px 20px;
 
-    /* Soft muted pink background */
     background: linear-gradient(
         135deg,
-        #f8dce5,
-        #f9e7eb
+        #f7dce5,
+        #f9e8dc
     );
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-sizing: border-box;
 }
 
 
 /* =========================
-   MAIN BOX
+   MAIN WISH BOX
 ========================= */
 
 .wish-container {
     width: 90%;
-    max-width: 850px;
+    max-width: 950px;
 
+    /*
+       Don't use fixed 90vh.
+       Let the content determine the height.
+    */
     min-height: 90vh;
+    height: auto;
 
-    padding: 35px 50px;
+    padding: 30px 45px 40px;
 
-    /* MUTED PINK instead of white */
+    /* MUTED PINK */
     background: #f8e8ed;
 
     border-radius: 12px;
@@ -107,7 +114,13 @@ body:has(.wish-container) {
 
     text-align: center;
 
-    overflow: hidden;
+    /*
+       IMPORTANT:
+       Don't cut the flower/photo.
+    */
+    overflow: visible;
+
+    box-sizing: border-box;
 }
 
 
@@ -116,10 +129,13 @@ body:has(.wish-container) {
 ========================= */
 
 .wish-container .flower {
-    font-size: 20px;
+    font-size: 48px;
+
     line-height: 1;
 
-    margin-bottom: 10px;
+    margin: 0 0 12px 0;
+
+    flex-shrink: 0;
 }
 
 
@@ -129,11 +145,33 @@ body:has(.wish-container) {
 
 .wish-container h1 {
     font-size: 38px;
+
     line-height: 1.2;
 
-    color: #c92f75;
+    color: #d12f78;
 
-    margin: 0 0 30px 0;
+    margin: 0 0 28px 0;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   PHOTO CONTAINER
+========================= */
+
+.teacher-photo {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 0 0 20px 0;
+
+    flex-shrink: 0;
 }
 
 
@@ -141,33 +179,31 @@ body:has(.wish-container) {
    PHOTO
 ========================= */
 
-.teacher-photo {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 18px;
-}
-
-
-/* IMPORTANT:
-   Do NOT crop the uploaded photo
-*/
-
 .teacher-photo img {
-    width: auto;
+
+    /*
+       BIGGER PHOTO
+    */
+    width: 750px;
+
+    max-width: 90%;
+
+    /*
+       Height adjusts automatically.
+       Therefore NO CROPPING.
+    */
     height: auto;
 
-    max-width: 700px;
-    max-height: 350px;
-
+    /*
+       Keep original proportions.
+    */
     object-fit: contain;
 
     border-radius: 20px;
 
     display: block;
+
+    margin: 0 auto;
 
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.15);
@@ -175,13 +211,17 @@ body:has(.wish-container) {
 
 
 /* =========================
-   INTRO
+   INTRO TEXT
 ========================= */
 
 .wish-container .intro {
-    max-width: 700px;
+
+    width: 100%;
+
+    max-width: 750px;
 
     font-size: 18px;
+
     line-height: 1.5;
 
     color: #555;
@@ -195,7 +235,9 @@ body:has(.wish-container) {
 ========================= */
 
 .wish-container .click-text {
+
     font-size: 17px;
+
     line-height: 1.4;
 
     color: #777;
@@ -209,6 +251,7 @@ body:has(.wish-container) {
 ========================= */
 
 .wish-container .envelope {
+
     font-size: 65px;
 
     line-height: 1;
@@ -220,6 +263,7 @@ body:has(.wish-container) {
     transition: transform 0.3s ease;
 }
 
+
 .wish-container .envelope:hover {
     transform: scale(1.12);
 }
@@ -230,105 +274,150 @@ body:has(.wish-container) {
 ========================= */
 
 .wish-container .envelope-text {
+
     font-size: 15px;
 
-    color: #c92f75;
+    color: #d12f78;
 
     margin-top: 5px;
 }
 
 
-/* =========================
-   PHONE VIEW
-========================= */
+/* =================================================
+   TABLET
+================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
     body:has(.wish-container) {
-        min-height: 100vh;
-
-        padding: 15px 10px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 25px 15px;
     }
 
 
     .wish-container {
+
         width: 94%;
 
-        min-height: 0;
+        min-height: auto;
 
-        padding: 25px 12px;
+        padding: 28px 25px 35px;
+    }
+
+
+    .wish-container h1 {
+        font-size: 34px;
+    }
+
+
+    .teacher-photo img {
+
+        width: 700px;
+
+        max-width: 95%;
+
+        height: auto;
+    }
+}
+
+
+/* =================================================
+   PHONE VIEW
+================================================= */
+
+@media (max-width: 600px) {
+
+    body:has(.wish-container) {
+
+        min-height: 100vh;
+
+        padding: 15px 8px;
+
+        align-items: flex-start;
+    }
+
+
+    /* MAIN BOX */
+
+    .wish-container {
+
+        width: 96%;
+
+        min-height: auto;
+
+        height: auto;
+
+        padding: 22px 12px 28px;
 
         background: #f8e8ed;
 
         border-radius: 12px;
 
-        display: flex;
-        flex-direction: column;
+        justify-content: flex-start;
 
-        justify-content: center;
         align-items: center;
 
-        overflow: hidden;
+        overflow: visible;
     }
 
 
-    /* Flower */
+    /* FLOWER */
 
     .wish-container .flower {
-        font-size: 36px;
 
-        margin-bottom: 6px;
+        font-size: 38px;
+
+        line-height: 1;
+
+        margin: 0 0 8px 0;
     }
 
 
-    /* Title */
+    /* TITLE */
 
     .wish-container h1 {
+
         font-size: 26px;
 
         line-height: 1.2;
 
-        margin: 0 0 25px 0;
+        margin: 0 0 22px 0;
     }
 
 
     /* PHOTO */
 
     .teacher-photo {
+
         width: 100%;
 
-        display: flex;
-        justify-content: center;
-
-        margin-bottom: 12px;
+        margin: 0 0 14px 0;
     }
 
 
     .teacher-photo img {
 
-        /* Use the available screen width */
-        width: auto;
+        /*
+           Use almost the whole mobile width
+        */
+        width: 100%;
 
-        max-width: 88vw;
+        max-width: 100%;
 
-        /* Don't force 200px height */
+        /*
+           Keep complete photo
+        */
         height: auto;
-
-        max-height: 260px;
 
         object-fit: contain;
 
-        border-radius: 16px;
+        border-radius: 15px;
     }
 
 
-    /* Intro */
+    /* INTRO */
 
     .wish-container .intro {
+
         width: 100%;
 
         max-width: 340px;
@@ -341,9 +430,10 @@ body:has(.wish-container) {
     }
 
 
-    /* Special text */
+    /* SPECIAL TEXT */
 
     .wish-container .click-text {
+
         font-size: 15px;
 
         line-height: 1.3;
@@ -352,19 +442,72 @@ body:has(.wish-container) {
     }
 
 
-    /* Envelope */
+    /* ENVELOPE */
 
     .wish-container .envelope {
+
         font-size: 55px;
 
         line-height: 1;
     }
 
 
+    /* ENVELOPE TEXT */
+
     .wish-container .envelope-text {
+
         font-size: 14px;
 
         margin-top: 4px;
+    }
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+================================================= */
+
+@media (max-width: 380px) {
+
+    .wish-container {
+
+        padding: 18px 9px 25px;
+    }
+
+
+    .wish-container .flower {
+
+        font-size: 34px;
+    }
+
+
+    .wish-container h1 {
+
+        font-size: 23px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .teacher-photo img {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+    }
+
+
+    .wish-container .intro {
+
+        font-size: 14px;
+    }
+
+
+    .wish-container .click-text {
+
+        font-size: 14px;
     }
 }
 /* =========================
