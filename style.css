@@ -116,7 +116,7 @@ body:has(.wish-container) {
 ========================= */
 
 .wish-container .flower {
-    font-size: 48px;
+    font-size: 20px;
     line-height: 1;
 
     margin-bottom: 10px;
